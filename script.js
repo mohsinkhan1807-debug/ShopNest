@@ -343,7 +343,7 @@ document.querySelectorAll(".wishlist-btn").forEach(button => {
         }
 
         updateWishlist();
-
+        localStorage.setItem("wishlist",JSON.stringify(wishlist));
     });
 
 });
