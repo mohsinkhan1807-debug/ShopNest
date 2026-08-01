@@ -756,8 +756,8 @@ html{
 }
 #topBtn{
     position: fixed;
-    bottom: 25px;
-    right: 25px;
+    bottom: 20px;
+    right: 20px;
     width: 50px;
     height: 50px;
     border: none;
@@ -767,7 +767,7 @@ html{
     font-size: 22px;
     cursor: pointer;
     display: none;
-    z-index: 9999;
+    z-index: 99999;
     box-shadow: 0 5px 15px rgba(0,0,0,.3);
     transition: .3s;
 }
@@ -783,7 +783,8 @@ html{
     width: 0%;
     height: 4px;
     background: linear-gradient(90deg,#00c6ff,#0072ff,#00c6ff);
-    z-index: 10000;
+    z-index: 999;
+    pointer-events:none;
     transition: width .1s linear;
     box-shadow: 0 0 10px rgba(0,114,255,.8);
 }
