@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopNest - Online Shopping</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="progress-bar"></div>
+    <div id="preloader">
+    <div class="loader"></div>
+    <h2>ShopNest</h2>
+</div>
+<header>
+    <nav class="navbar">
+
+        <div class="logo">
+            Shop<span>Nest</span>
+        </div>
+
+<div class="search-box">
+    <input type="text" id="search" placeholder="Search products...">
+    <button>🔍</button>
+</div>
+
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="#categories">Categories</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+
+        <div class="icons">
+            🔍
+            <a href="#favourite" id="wishlist-link">
+            ❤️
+            <span id="wishlist-count">0</span>
+            </a>
+            <a href="#" id="cart-btn">
+            🛒<span id="cart-icon">0</span>
+            </a>
+            <button id="theme-toggle">🌙</button>
+            👤
+        </div>
+
+    </nav>
+</header>
+
+<div id="home"></div> 
+<section class="hero">
+
+    <div class="hero-text">
+        <h1>Shop Smart, <span>Save Big</span></h1>
+        <p>Discover The Latest Fasion, Electronics, Watches, Shoes And Accessories at The Best Price.</p>
+        <a href="#shop">
+        <button>Shop Now</button>
+        </a>
+    </div>
+
+    <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=700" alt="Product">
+    </div>
+
+</section>
+
+<section id="shop" class="products">
+
+    <h2>Featured Products</h2>
+
+    <div class="product-grid">
+
+        <div class="product-card" data-name="running shoes" data-price="2999">
+            <button class="wishlist-btn">🤍</button>
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400" alt="">
+            <h3>Running Shoes</h3>
+            <p>₹2,999</p>
+            <button class="add-cart">Add to Cart</button>
+        </div>
+
+        <div class="product-card" data-name="smart phone" data-price="24999">
+             <button class="wishlist-btn">🤍</button>
+            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400" alt="">
+            <h3>Smart Phone</h3>
+            <p>₹24,999</p>
+            <button class="add-cart">Add to Cart</button>
+        </div>
+
+        <div class="product-card" data-name="smart watch" data-price="3999">
+             <button class="wishlist-btn">🤍</button>
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400" alt="">
+            <h3>Smart Watch</h3>
+            <p>₹3,999</p>
+            <button class="add-cart">Add to Cart</button>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="categories" class="categories">
+
+    <h2>Shop by Category</h2>
+
+    <div class="category-grid">
+
+        <div class="category">👕<h3>Fashion</h3></div>
+
+        <div class="category">📱<h3>Mobiles</h3></div>
+
+        <div class="category">💻<h3>Laptops</h3></div>
+
+        <div class="category">⌚<h3>Watches</h3></div>
+
+        <div class="category">🎧<h3>Accessories</h3></div>
+
+        <div class="category">👟<h3>Shoes</h3></div>
+
+    </div>
+
+</section>
+
+<section id="favourite"> 
+    <h2>Favourite Products ❤️</h2>
+    <div id="wishlist-products"></div>
+</section>
+
+<div class="cart-sidebar" id="cart-sidebar">
+
+    <div class="cart-header">
+        <h2>🛒 My Cart</h2>
+        <button id="close-cart">&times;</button>
+    </div>
+
+    <div id="cart-items">
+
+    </div>
+
+    <div class="cart-footer">
+        <h3>Total: ₹<span id="cart-total">0</span></h3>
+        <button class="checkout-btn">Checkout</button>
+    </div>
+
+</div>
+
+<div class="checkout-popup" id="checkout-popup">
+
+    <div class="checkout-box">
+
+        <h2>Checkout</h2>
+
+        <input type="text" id="customer-name" placeholder="Full Name">
+
+        <input type="text" id="customer-phone" placeholder="Mobile Number">
+
+        <textarea id="customer-address" placeholder="Delivery Address"></textarea>
+
+<div class="payment-box">
+
+    <h3>Payment Method</h3>
+
+    <label>
+        <input type="radio" name="payment" value="Cash on Delivery" checked>
+        💵 Cash on Delivery
+    </label>
+
+    <label>
+        <input type="radio" name="payment" value="UPI">
+        📱 UPI
+    </label>
+
+    <label>
+        <input type="radio" name="payment" value="Card">
+        💳 Credit / Debit Card
+    </label>
+
+</div>
+
+<div class="coupon-box">
+    <input type="text" id="coupon-code" placeholder="Enter Coupon Code">
+
+    <button id="apply-coupon">
+        Apply
+    </button>
+</div>
+
+<p id="discount-text">
+    Discount: ₹0
+</p>
+
+<div class="order-summary">
+    <h3>Order Summary</h3>
+
+    <div id="order-summary-items"></div>
+
+    <hr>
+
+    <p>Subtotal: <span id="subtotal">₹0</span></p>
+    <p>Discount: <span id="summary-discount">₹0</span></p>
+    <p>Delivery: <span style="color:green;">FREE</span></p>
+
+    <hr>
+
+    <h3>Total: <span id="checkout-total">₹0</span></h3>
+</div>
+
+        <div class="checkout-button">
+            <button id="place-order">Place Order</button>
+            <button id="close-checkout">Cancel</button>
+        </div>
+
+    </div>
+
+</div>
+
+<div id="toast"></div>
+
+<section id="contact" class="contact-section">
+
+    <h2>Contact Us</h2>
+    <p>Have any questions? We'd love to hear from you.</p>
+
+    <form id="contact-form">
+
+        <input type="text" id="contact-name" placeholder="Your Name" required>
+
+        <input type="email" id="contact-email" placeholder="Your Email" required>
+
+        <input type="text" id="contact-subject" placeholder="Subject" required>
+
+        <textarea id="contact-message" placeholder="Your Message" required></textarea>
+
+        <button type="submit">Send Message</button>
+
+    </form>
+
+</section>
+
+<section id="reviews" class="reviews">
+
+    <h2>What Our Customers Say</h2>
+    <p>Trusted by thousands of happy customers.</p>
+
+    <div class="review-container">
+
+        <div class="review-card">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p>"Amazing quality and super fast delivery. Highly recommended!"</p>
+            <h4>Rahul Sharma</h4>
+        </div>
+
+        <div class="review-card">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p>"Best shopping experience. Product quality exceeded my expectations."</p>
+            <h4>Priya Patel</h4>
+        </div>
+
+        <div class="review-card">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p>"Excellent customer support and genuine products. Will shop again!"</p>
+            <h4>Aman Khan</h4>
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer id="about" class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-about">
+            <h2>ShopNest</h2>
+            <p>Your one-stop online shopping destination.</p>
+        </div>
+
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <a href="#home">Home</a>
+            <a href="#shop">Shop</a>
+            <a href="#categories">Categories</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <div class="footer-contact">
+            <h3>Contact</h3>
+            <p>📍 Pune, Maharashtra</p>
+            <p>📞 +91 9876543210</p>
+            <p>✉ support@shopnest.com</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 ShopNest | All Rights Reserved.
+    </div>
+
+</footer>
+<button id="topBtn">⬆</button>
+<script src="script.js"></script>
+</body>
+</html>
