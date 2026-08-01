@@ -316,6 +316,37 @@ document.querySelectorAll(".wishlist-btn").forEach(button => {
 }
 
 localStorage.setItem("wishlist",JSON.stringify(wishlist));
+document.querySelectorAll(".wishlist-btn").forEach(button => {
+
+    button.addEventListener("click", function () {
+
+        const card = button.closest(".product-card");
+
+        const item = {
+            name: card.dataset.name,
+            price: card.dataset.price,
+            image: card.querySelector("img").src
+        };
+
+        const index = wishlist.findIndex(p => p.name === item.name);
+
+        if (index === -1) {
+            wishlist.push(item);
+            button.classList.add("active");
+            button.innerText = "❤️";
+            showToast("Added to Favourite ❤️");
+        } else {
+            wishlist.splice(index, 1);
+            button.classList.remove("active");
+            button.innerText = "🤍";
+            showToast("Removed from Favourite ❌");
+        }
+
+        updateWishlist();
+
+    });
+
+});
 
 
 // =======================
